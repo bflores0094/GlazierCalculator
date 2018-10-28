@@ -9,6 +9,23 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-
+        <Button x:Name="CalcBtn" Content="Calculate" HorizontalAlignment="Left" Margin="230,490,0,0" VerticalAlignment="Top" FontSize="36" FontFamily="Garamond" Foreground="Black" BorderBrush="{ThemeResource SystemControlHighlightBaseMediumHighBrush}" Click="CalcBtn_Click"/>
+        <TextBlock HorizontalAlignment="Left" Margin="109,142,0,0" Text="Width:" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
+        <TextBox x:Name="WidthInput" HorizontalAlignment="Left" Margin="190,136,0,0" Text="" VerticalAlignment="Top" FocusVisualPrimaryBrush="Black" FontSize="24" InputScope="Digits" KeyUp="Validate_key"/>
+        <TextBlock HorizontalAlignment="Left" Margin="102,191,0,0" Text="Height:" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
+        <TextBox x:Name="HeightInput" HorizontalAlignment="Left" Margin="190,185,0,0" Text="" VerticalAlignment="Top" FocusVisualPrimaryBrush="Black" FontSize="24" InputScope="Digits" KeyUp="Validate_key"/>
+        <TextBlock HorizontalAlignment="Left" Margin="333,142,0,0" Text="Color:" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
+        <ComboBox x:Name="ColorDrop" HorizontalAlignment="Left" Margin="313,191,0,0" VerticalAlignment="Top" Width="109" PlaceholderText="None" AllowDrop="True">
+            <ComboBoxItem Background="#FF3E0B0B" Content="Brown"/>
+            <ComboBoxItem Background="#FF2D318B" Content="Blue"/>
+            <ComboBoxItem Background="Black" Content="Black"/>
+        </ComboBox>
+        <TextBlock HorizontalAlignment="Left" Margin="198,320,0,0" Text="Quantity:" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
+        <TextBlock x:Name="SliderDisplay" HorizontalAlignment="Left" Margin="313,325,0,0" Text="1" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20"/>
+        <Slider x:Name="NewSlider" HorizontalAlignment="Left" Margin="190,382,0,0" VerticalAlignment="Top" Width="211" Minimum="1" Maximum="25" TickPlacement="Inline" Value="0" ValueChanged="SliderChange"/>
+        <TextBlock HorizontalAlignment="Left" Margin="607,141,0,0" Text="Wood Length:" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontWeight="Bold"/>
+        <TextBlock x:Name="WoodOutput" HorizontalAlignment="Left" Margin="690,207,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Height="54" FocusVisualPrimaryBrush="Black" FontSize="20" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="634,299,0,0" Text="Glass Area:" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontWeight="Bold"/>
+        <TextBlock x:Name="GlassOutput" HorizontalAlignment="Left" Margin="690,366,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Height="54" FocusVisualPrimaryBrush="Black" FontSize="20" FontWeight="Bold"/>
     </Grid>
 </Page>

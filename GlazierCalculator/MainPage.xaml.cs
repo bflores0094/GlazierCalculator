@@ -26,5 +26,42 @@ namespace GlazierCalculator
         {
             this.InitializeComponent();
         }
+
+        private void SliderChange(object sender, RangeBaseValueChangedEventArgs e)
+        {
+            Slider sliderObj = sender as Slider;
+            double numChange = sliderObj.Value;
+            SliderDisplay.Text = numChange.ToString();
+        }
+
+        private void CalcBtn_Click(object sender, RoutedEventArgs e)
+        {
+            double widthIn = Convert.ToDouble(WidthInput.Text);
+            double heightIn = Convert.ToDouble(HeightInput.Text);
+            double glass = 2 * (widthIn * heightIn);
+            double wood = 2 * (widthIn + heightIn) * 3.25;
+           
+            WoodOutput.Text = wood.ToString() + " Ft";
+            GlassOutput.Text = glass.ToString() + " Sq ft";
+            
+            
+        }
+
+        private void Validate_key(object sender, KeyRoutedEventArgs e)
+        {
+            TextBox box = sender as TextBox;
+
+            string empty = "";
+            char keyUp = Convert.ToChar(e.Key);
+            if (!char.IsDigit(keyUp))
+            {
+                box.Text = empty;
+            }
+            if (box.Text.Length > 2)
+            {
+                char[] input = box.Text.ToCharArray();
+                box.Text = input[0].ToString() + input[1].ToString();
+            }
+        }
     }
 }
